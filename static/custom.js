@@ -1,3 +1,9 @@
+// Bloqueio botão direito
+document.addEventListener('contextmenu', function(e) {
+    e.preventDefault();
+});
+
+// CLI interativo
 const input = document.getElementById('cli-input');
 const output = document.getElementById('cli-output');
 

@@ -1,21 +1,97 @@
-{% extends 'base.html' %}
-{% block content %}
-<section class="py-8">
-  <h1 class="text-3xl font-bold mb-3">Olá, eu sou Gustavo Franco</h1>
-  <p class="text-gray-700 mb-6">Este é meu espaço para projetos pessoais e experimentos.
-    Dê uma olhada nos <a href="{{ url_for('projects') }}" class="underline">projetos</a>.
-  </p>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ title }}</title>
 
-  <div class="grid sm:grid-cols-2 gap-4">
-    <a href="{{ url_for('projects') }}" class="block border rounded-2xl p-5 bg-white shadow-sm hover:shadow-md transition">
-      <h2 class="text-xl font-semibold mb-2">Projetos</h2>
-      <p class="text-gray-600">Lista de projetos em que estou trabalhando.</p>
-    </a>
+    <!-- CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='custom.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Source+Code+Pro&display=swap" rel="stylesheet">
+    <!-- Font Awesome para ícones -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
 
-    <a href="{{ url_for('project_crypto') }}" class="block border rounded-2xl p-5 bg-white shadow-sm hover:shadow-md transition">
-      <h2 class="text-xl font-semibold mb-2">Agregador de Notícias Cripto</h2>
-      <p class="text-gray-600">Preview do projeto que vamos desenvolver.</p>
-    </a>
-  </div>
+<header>
+    <h1>Gustavo Franco</h1>
+    <nav>
+        <a href="#about">Sobre</a>
+        <a href="#tech">Tech Stack</a>
+        <a href="#projects">Projetos</a>
+        <a href="#cli">CLI</a>
+        <a href="#contact">Contato</a>
+    </nav>
+</header>
+
+<section id="hero">
+    <h2>Redes, Automação e Desenvolvimento Web</h2>
+    <p>Explore meus projetos e habilidades</p>
 </section>
-{% endblock %}
+
+<section id="about">
+    <h2>Sobre Mim</h2>
+    <p>Sou Gustavo Franco, apaixonado por automação, redes e desenvolvimento de ferramentas que aceleram o trabalho.</p>
+</section>
+
+<section id="tech">
+    <h2>Tech Stack</h2>
+    <div class="tech-grid">
+        <div class="tech-card"><i class="fab fa-html5"></i><span>HTML</span></div>
+        <div class="tech-card"><i class="fab fa-css3-alt"></i><span>CSS</span></div>
+        <div class="tech-card"><i class="fab fa-python"></i><span>Python</span></div>
+        <div class="tech-card"><i class="fas fa-server"></i><span>Flask</span></div>
+        <div class="tech-card"><i class="fas fa-network-wired"></i><span>Juniper</span></div>
+        <div class="tech-card"><i class="fas fa-sitemap"></i><span>ZTE</span></div>
+        <div class="tech-card"><i class="fab fa-linux"></i><span>Linux</span></div>
+        <div class="tech-card"><i class="fas fa-terminal"></i><span>CLI</span></div>
+    </div>
+</section>
+
+<section id="projects">
+    <h2>Projetos</h2>
+    <div class="projects-grid">
+        <div class="project-card">
+            <h3>Meu Site / Portfolio</h3>
+            <p>Portfolio moderno com CLI integrado</p>
+        </div>
+        <div class="project-card">
+            <h3>Coletor de Notícias de Cripto</h3>
+            <p>Agregador de notícias de várias fontes</p>
+        </div>
+        <div class="project-card">
+            <h3>Coleta de OLTs</h3>
+            <p>Estatísticas de portas GPON (futuro)</p>
+        </div>
+        <div class="project-card">
+            <h3>Crypto Trends / Crypto Bubbles</h3>
+            <p>Análise de tendências cripto (futuro)</p>
+        </div>
+    </div>
+</section>
+
+<section id="cli">
+    <h2>Terminal Interativo</h2>
+    <div id="terminal">
+        <pre id="cli-output">
+> bem-vindo ao portfolio CLI
+> digite 'help' para ver comandos
+        </pre>
+        <input type="text" id="cli-input" placeholder="Digite um comando..." autofocus>
+    </div>
+</section>
+
+<section id="contact">
+    <h2>Contato</h2>
+    <p>LinkedIn: <a href="https://www.linkedin.com/in/gustavofrs/" target="_blank">gustavofrs</a></p>
+    <p>Email: <a href="mailto:franco.telco@gmail.com">franco.telco@gmail.com</a></p>
+</section>
+
+<footer>
+    <p>© 2025 Gustavo Franco</p>
+</footer>
+
+<script src="{{ url_for('static', filename='custom.js') }}"></script>
+</body>
+</html>
