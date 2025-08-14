@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% block content %}
+<section class="py-8">
+  <h1 class="text-3xl font-bold mb-3">Olá, eu sou Gustavo Franco</h1>
+  <p class="text-gray-700 mb-6">Este é meu espaço para projetos pessoais e experimentos.
+    Dê uma olhada nos <a href="{{ url_for('projects') }}" class="underline">projetos</a>.
+  </p>
+
+  <div class="grid sm:grid-cols-2 gap-4">
+    <a href="{{ url_for('projects') }}" class="block border rounded-2xl p-5 bg-white shadow-sm hover:shadow-md transition">
+      <h2 class="text-xl font-semibold mb-2">Projetos</h2>
+      <p class="text-gray-600">Lista de projetos em que estou trabalhando.</p>
+    </a>
+
+    <a href="{{ url_for('project_crypto') }}" class="block border rounded-2xl p-5 bg-white shadow-sm hover:shadow-md transition">
+      <h2 class="text-xl font-semibold mb-2">Agregador de Notícias Cripto</h2>
+      <p class="text-gray-600">Preview do projeto que vamos desenvolver.</p>
+    </a>
+  </div>
+</section>
+{% endblock %}

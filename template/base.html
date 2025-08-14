@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="pt-br">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>{{ title or 'Site' }} — Gustavo Franco</title>
+  <!-- Tailwind via CDN para agilizar -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="{{ url_for('static', filename='custom.css') }}" />
+</head>
+<body class="bg-gray-50 text-gray-900">
+  <header class="border-b bg-white">
+    <nav class="max-w-4xl mx-auto flex items-center justify-between p-4">
+      <a href="{{ url_for('home') }}" class="font-semibold text-lg">Gustavo Franco</a>
+      <ul class="flex items-center gap-6">
+        <li><a href="{{ url_for('home') }}" class="hover:underline">Home</a></li>
+        <li><a href="{{ url_for('projects') }}" class="hover:underline">Projetos</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="max-w-4xl mx-auto p-4">
+    {% block content %}{% endblock %}
+  </main>
+
+  <footer class="max-w-4xl mx-auto p-4 text-sm text-gray-500">
+    <p>© {{ 2025 }} Gustavo Franco. Todos os direitos reservados.</p>
+  </footer>
+</body>
+</html>
