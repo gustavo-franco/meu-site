@@ -1,9 +1,3 @@
-// Bloqueio botão direito
-document.addEventListener('contextmenu', function(e) {
-    e.preventDefault();
-});
-
-// CLI interativo
 const input = document.getElementById('cli-input');
 const output = document.getElementById('cli-output');
 
@@ -26,7 +20,7 @@ input.addEventListener('keypress', function(e){
                 response = 'HTML, CSS, Python, Flask, Juniper, ZTE, Linux, CLI';
                 break;
             case 'contact':
-                response = 'LinkedIn: gustavofrs\nEmail: gustavo.franco@example.com';
+                response = 'LinkedIn: gustavofrs\nEmail: franco.telco@gmail.com';
                 break;
             default:
                 response = 'Comando não encontrado. Digite help';
@@ -35,5 +29,14 @@ input.addEventListener('keypress', function(e){
         output.textContent += `\n> ${command}\n${response}`;
         input.value = '';
         output.scrollTop = output.scrollHeight;
+    }
+});
+
+// Torna os project cards clicáveis para abrir news.html
+document.querySelectorAll('.project-card').forEach(card => {
+    if(card.textContent.includes('Coletor de Notícias de Cripto')){
+        card.addEventListener('click', () => {
+            window.location.href = '/news';
+        });
     }
 });

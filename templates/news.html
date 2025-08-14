@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ title }}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='custom.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Source+Code+Pro&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .news-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+            margin: 2rem 0;
+        }
+        .news-card {
+            border-radius: 12px;
+            background-color: #1f1f2e;
+            color: #fff;
+            padding: 1rem;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        .news-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 16px rgba(0,0,0,0.3);
+        }
+        .news-card a {
+            color: #a892f0; /* roxo suave */
+            text-decoration: none;
+        }
+        .news-card a:hover {
+            text-decoration: underline;
+        }
+        .news-fonte {
+            font-size: 0.85rem;
+            color: #bbb;
+            margin-top: 0.5rem;
+        }
+    </style>
+</head>
+<body>
+<header>
+    <h1>Gustavo Franco</h1>
+    <nav>
+        <a href="{{ url_for('home') }}">Home</a>
+        <a href="{{ url_for('news') }}">Notícias</a>
+    </nav>
+</header>
+
+<main>
+    <section id="news">
+        <h2>Últimas Notícias de Cripto</h2>
+        <div class="news-grid">
+            {% for noticia in noticias %}
+            <div class="news-card">
+                <a href="{{ noticia.link }}" target="_blank">{{ noticia.titulo }}</a>
+                <div class="news-fonte">{{ noticia.fonte }}</div>
+            </div>
+            {% endfor %}
+        </div>
+    </section>
+</main>
+
+<footer>
+    <p>© 2025 Gustavo Franco</p>
+</footer>
+</body>
+</html>

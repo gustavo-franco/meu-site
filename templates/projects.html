@@ -1,15 +1,43 @@
-{% extends 'base.html' %}
-{% block content %}
-<section class="py-8">
-  <h1 class="text-2xl font-bold mb-4">Projetos</h1>
-  <div class="grid sm:grid-cols-2 gap-4">
-    <article class="border rounded-2xl p-5 bg-white shadow-sm">
-      <h2 class="text-xl font-semibold mb-2">Agregador de Notícias Cripto</h2>
-      <p class="text-gray-600 mb-4">Coleta notícias de ~30 fontes, mantém histórico e atualiza automaticamente.</p>
-      <a href="{{ url_for('project_crypto') }}" class="inline-block underline">Abrir projeto</a>
-    </article>
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projetos - Gustavo Franco</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='custom.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="{{ url_for('home') }}">Home</a></li>
+                <li><a href="{{ url_for('projects') }}">Projetos</a></li>
+            </ul>
+        </nav>
+    </header>
 
-    <!-- Você pode adicionar outros cards de projetos aqui -->
-  </div>
-</section>
-{% endblock %}
+    <section id="projects" class="py-8">
+        <h1 class="text-2xl font-bold mb-4">Projetos</h1>
+        <div class="grid sm:grid-cols-2 gap-4">
+            <!-- Card do Coletor de Notícias de Cripto -->
+            <article class="border rounded-2xl bg-white shadow-sm hover:shadow-lg transition">
+                <a href="{{ url_for('news') }}" class="block p-5 h-full cursor-pointer">
+                    <h2 class="text-xl font-semibold mb-2">Coletor de Notícias de Cripto</h2>
+                    <p class="text-gray-600 mb-4">Agregador de notícias de várias fontes e mantém histórico.</p>
+                </a>
+            </article>
+
+            <!-- Card de exemplo futuro -->
+            <article class="border rounded-2xl bg-white shadow-sm hover:shadow-lg transition">
+                <a href="#" class="block p-5 h-full cursor-pointer">
+                    <h2 class="text-xl font-semibold mb-2">Projeto Futuro</h2>
+                    <p class="text-gray-600 mb-4">Descrição de outro projeto que será adicionado.</p>
+                </a>
+            </article>
+        </div>
+    </section>
+</body>
+</html>
