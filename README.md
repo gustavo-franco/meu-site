@@ -1,18 +1,26 @@
-# Site pessoal (Flask) – Gustavo Franco
+# Meu Site Pessoal
 
-Site simples com Flask hospedável no Render: Home, Projetos e um placeholder para o Agregador de Notícias Cripto.
+Este repositório contém meu site pessoal, desenvolvido com **Flask**, **HTML**, **CSS** e **JavaScript**.  
+O site possui:
 
-## Rodar localmente
+- Página **Home** com apresentação pessoal  
+- Seção **Projetos** com links para trabalhos e automações  
+- Projeto destaque: **Agregador de Notícias Cripto** (coleta automática de notícias e exibição web)
+
+---
+
+## Tecnologias Utilizadas
+
+- Python & Flask  
+- HTML5, CSS3, JavaScript  
+- Plotly para gráficos  
+- Git/GitHub para versionamento  
+- Deploy no Render  
+
+---
+
+## Como Rodar Localmente
+
+1. Clone o repositório:  
 ```bash
-python -m venv .venv
-source .venv/bin/activate  # Windows: .venv\Scripts\activate
-pip install -r requirements.txt
-python app.py
-```
-Acesse: http://localhost:5000
-
-## Deploy no Render
-1. Suba este código em um repositório no GitHub.
-2. No Render: **New + → Web Service** → conecte seu repo.
-3. Runtime: Python. Build: `pip install -r requirements.txt`. Start: `gunicorn app:app`.
-4. Deploy.
+git clone https://github.com/gustavo-franco/meu-site.git
